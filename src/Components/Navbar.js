@@ -8,7 +8,7 @@ export class Navbar extends Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               NewsZilla
@@ -34,40 +34,71 @@ export class Navbar extends Component {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/business">
-                    Business
+                <li className="nav-item dropdown">
+                  <Link
+                    className="nav-link dropdown-toggle"
+                    role="button"
+                    to="/"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Categories
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/entertainment">
-                    Entertainment
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/general">
-                    General
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/health">
-                    Health
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/science">
-                    Science
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/sports">
-                    Sports
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/technology">
-                    Technology
-                  </Link>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/business">
+                        Business
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/entertainment">
+                        Entertainment
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/general">
+                        General
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/health">
+                        Health
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/science">
+                        Science
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/sports">
+                        Sports
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/technology">
+                        Technology
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
