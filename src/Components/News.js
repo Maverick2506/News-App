@@ -9,9 +9,6 @@ const News = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalArticles, setTotalArticles] = useState(0);
-  // document.title = `${capitalzeFirstLetter(
-  //   props.category
-  // )} - NewsZilla`;
 
   const capitalzeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,12 +29,17 @@ const News = (props) => {
   };
 
   useEffect(() => {
+    document.title = `${capitalzeFirstLetter(props.category)} - NewsZilla`;
     updateNews();
   }, []);
 
   const fetchMoreData = async () => {
-    setPage(page + 1);21
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${
+      props.country
+    }&category=${props.category}&apiKey=${props.apiKey}&page=${
+      page + 1
+    }&pageSize=${props.pageSize}`;
+    setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
@@ -47,7 +49,9 @@ const News = (props) => {
 
   return (
     <>
-      <h2 className="text-center">NewsZilla - Top Headlines</h2>
+      <h2 className="text-center" style={{ marginTop: "72px" }}>
+        NewsZilla - Top Headlines
+      </h2>
       {loading && <Loading />}
       <InfiniteScroll
         dataLength={articles.length}

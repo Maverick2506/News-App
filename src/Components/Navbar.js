@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <nav
+        className="navbar fixed-top navbar-expand-lg bg-dark"
+        data-bs-theme="dark"
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             NewsZilla

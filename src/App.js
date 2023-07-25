@@ -10,10 +10,6 @@ const App = () => {
 
   const [progress, setProgress] = useState(0);
 
-  // setProgress = (progress) => {
-  //   setState({ progress });
-  // };
-
   return (
     <div>
       <Router>
